@@ -72,6 +72,14 @@ name = newValue;
 let name: Type;
 mut name: Type;
 
+// Optional assignment
+let Result::Ok(value) = option else Result::Error(e) {
+    return e;
+}
+let Option::Some(value) = option else {
+    return;
+}
+
 
 
 ### Functions
@@ -85,7 +93,7 @@ func name(param: Type): ReturnType {
 name(value);
 
 
-## Lambdas
+#### Lambdas
 
 (param: Type) -> {
     "Hello, world!"
@@ -116,7 +124,7 @@ value.methodWithFun(fun {
 ### Loops
 
 
-## While
+#### While
 
 while true {
     println("Hello");
@@ -124,7 +132,7 @@ while true {
 };
 
 
-## Foreach
+#### Foreach
 
 let iterator: Iterator = Vec::from(0, 1, 2).iter();
 
@@ -153,6 +161,15 @@ if true {
 let integer: Int = if true {0} else if true {1} else {2};
 // Also with a simpler syntax
 let integer: Int = if true then 0 else if true then 1 else 2;
+
+if true then 0 else 1;
+
+
+#### Comparison
+
+! negation operator
+==, != structural comparison (same value)
+===, !== physical comparison (same data in memory)
 
 
 
