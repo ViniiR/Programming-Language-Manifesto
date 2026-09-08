@@ -44,14 +44,34 @@ public
 
 
 
+### Naming rules
+
+constant variables: CONSTANT_CASE
+normal variables and functions: camelCase or snake_case
+types: PascalCase
+
+
+
+### In this document
+
+you may see 
+ident: naming identifier
+Tydent: naming identifier for types
+expr: any expression
+, *: operation can be repeated
+
+
 ### Blocks
 
+// Defined by
+{}
+
 // Blocks automatically return their last expression
-let hello: String = {
-    "Hello"
+let ident: Tydent = {
+    expr
 };
 
-let none: Void = {};
+let ident: Tydent = {};
 
 
 
@@ -85,19 +105,31 @@ let Option::Some(value) = option else {
 ### Functions
 
 // Types must be defined
-func name(param: Type): ReturnType {
+func ident(ident: Tydent, *): Tydent {
 
-};
+}
 
 // Calling functions
-name(value);
+ident(expr);
 
 
 #### Lambdas
 
-(param: Type) -> {
-    "Hello, world!"
+fun(ident: Tydent, *) {
+    println(ident);
 };
+
+fun {
+    println(it);
+};
+
+##### Short lambdas
+
+fun(ident: Tydent, *) -> println(ident);
+
+fun -> println(it);
+
+
 
 // They are expressions
 let function: Function<Type1, Type2, ..., String> = 
