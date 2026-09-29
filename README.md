@@ -1,6 +1,7 @@
 # Styria
 
 An expression-based, statically typed, scripting programming language named after the Duchy of Styria
+File extension: .sty
 
 ## Shebang
 
@@ -444,7 +445,13 @@ if the first two characters are #! the first line will be ignored by the parser
         <td>Member Access (Dot)</td>
         <td>.</td>
         <td>value.member</td>
-        <td>Lets you access field, method, or type on structs or enums</td>
+        <td>Lets you access field, method, or type on structs and enums</td>
+    </tr>
+    <tr>
+        <td>Namespace Resolutor (Double Colon)</td>
+        <td>::</td>
+        <td>namespace::Type</td>
+        <td>Lets you resolve module paths and access functions, types or constants defined on them</td>
     </tr>
     <tr>
         <td>Void Coalescing</td>
@@ -645,3 +652,24 @@ to use a literal ${} see String Escape Characters
         <td>\$</td>
     </tr>
 </table>
+
+
+
+## Modules
+
+As previously mentioned, items in a file can be exposed to the outside,
+modules can be structured in either of these two ways:
+<pre><code>
+- main.sty
+- mod1.sty
+- mod2/
+-    mod2.sty
+-    nested.sty
+</code></pre>
+
+You can import them like this:
+<ul>
+    <li><code>import "mod1" as mod1;</code></li>
+    <li><code>import "mod2" as mod2;</code></li>
+    <li><code>mod2::nested::some_func();</code></li>
+</ul>
